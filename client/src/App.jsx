@@ -13,6 +13,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import ProtectedRoute from './ProtectedRoute.jsx';
 import Navbar from './components/Navbar.jsx';
 import HomePage from './pages/HomePage.jsx';
+import TaskDetailPage from './pages/TaskDetailPage.jsx';
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
 
               <Route element={<ProtectedRoute />}>
                 <Route path='/tasks' element={<TasksPage />} />
+                <Route path="/tasks/:id" element={<TaskDetailPage />} />
                 <Route path='/add-task' element={<TaskFormPage />} />
-                <Route path='/tasks/:id' element={<TaskFormPage />} />
+                <Route path='/tasks/edit/:id' element={<TaskFormPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
               </Route>
             </Routes>

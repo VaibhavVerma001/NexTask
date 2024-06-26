@@ -18,7 +18,7 @@ function TaskCard({ task }) {
       <header className="flex justify-between mb-4">
         <h1 className="text-lg md:text-xl font-bold text-white">{task.title}</h1>
       </header>
-      <p className="text-gray-300 text-sm md:text-base mb-4">{truncateText(task.description, 100)}</p>
+      <p className="text-gray-300 text-sm md:text-base mb-4">{truncateText(task.description, 50)}</p>
       <p className="text-gray-400 text-xs md:text-sm mb-4">
         {dayjs(task.date).utc().format('DD/MM/YYYY')}
       </p>
@@ -31,6 +31,13 @@ function TaskCard({ task }) {
         </button>
         <Link
           to={`/tasks/${task._id}`}
+          className="bg-slate-500
+           hover:bg-slate-600 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base mr-2"
+        >
+          Detailed View
+        </Link>
+        <Link
+          to={`/tasks/edit/${task._id}`}
           className="bg-blue-500 hover:bg-blue-600 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base"
         >
           Edit
@@ -40,4 +47,4 @@ function TaskCard({ task }) {
   );
 }
 
-export default TaskCard;
+export default TaskCard;

@@ -11,38 +11,33 @@ dayjs.extend(utc);
 function TasksPage() {
   const { getTasks, tasks } = useTasks();
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterDate, setFilterDate] = useState("");
-  const { isAuthenticated,user } = useAuth();
+  const { isAuthenticated, user } = useAuth();
 
   useEffect(() => {
     getTasks();
   }, []);
 
   const filteredTasks = tasks.filter((task) =>
-    task.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filterDate === "" || dayjs(task.date).format('YYYY-MM-DD') === filterDate)
+    task.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const handleDateChange = (e) => {
-    setFilterDate(e.target.value);
-  };
 
   const handleReset = () => {
     setSearchTerm("");
-    setFilterDate("");
   };
 
   return (
     <>
-      <div>
+      <div className="flex justify-between items-center px-4 py-2">
         {isAuthenticated && (
-          <div>
-            <div>{`Welcome ${user.username}!`}</div>
+          <div>{`Welcome ${user.username}!`}</div>
+        )}
+        <div className="flex justify-end">
+          {isAuthenticated && (
             <Link to="/add-task" className="bg-indigo-500 px-4 py-1 rounded-sm">
               Add Task
             </Link>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="container mx-auto py-8 px-4">
         <div className="flex items-center gap-4 mb-4">
@@ -51,13 +46,7 @@ function TasksPage() {
             placeholder="Search tasks..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-gray-200 px-4 py-2 rounded-md w-64 focus:outline-none"
-          />
-          <input
-            type="date"
-            value={filterDate}
-            onChange={handleDateChange}
-            className="bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+            className="bg-gray-200 px-4 py-2 rounded-md w-64 focus:outline-none text-black"
           />
           <button
             onClick={handleReset}
@@ -68,7 +57,7 @@ function TasksPage() {
         </div>
 
         {filteredTasks.length === 0 ? (
-          <h1 className="text-3xl text-gray-800">No tasks found</h1>
+          <h1 className="text-3xl text-gray-300">No tasks found</h1>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredTasks.map((task) => (
@@ -76,8 +65,8 @@ function TasksPage() {
             ))}
           </div>
         )}
-      </div>
-    </>
+      </div>
+    </>
   );
 }
 
