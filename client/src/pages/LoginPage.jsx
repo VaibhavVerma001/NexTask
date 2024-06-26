@@ -18,7 +18,7 @@ function LoginPage() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="bg-gray-800 max-w-md w-full p-10 rounded-md">
+      <div className="bg-gray-900 max-w-md w-full p-10 rounded-md">
         {signInErrors.map((error, i) => (
           <div key={i} className="bg-red-500 p-2 text-white my-2 rounded-md">
             {error}
@@ -32,7 +32,7 @@ function LoginPage() {
             type="email"
             name="email"
             {...register('email', { required: true })}
-            className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-600"
+            className="w-full bg-gray-800 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-700"
             placeholder="Enter your email"
           />
           {errors.email && (
@@ -43,7 +43,7 @@ function LoginPage() {
             type="password"
             name="password"
             {...register('password', { required: true })}
-            className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-600"
+            className="w-full bg-gray-800 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-700"
             placeholder="Enter your password"
           />
           {errors.password && (
@@ -71,4 +71,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default LoginPage;

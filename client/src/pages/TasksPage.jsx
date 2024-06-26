@@ -33,7 +33,7 @@ function TasksPage() {
         )}
         <div className="flex justify-end">
           {isAuthenticated && (
-            <Link to="/add-task" className="bg-indigo-500 px-4 py-1 rounded-sm">
+            <Link to="/add-task" className="bg-gray-800 px-4 py-1 rounded-md">
               Add Task
             </Link>
           )}
@@ -46,11 +46,11 @@ function TasksPage() {
             placeholder="Search tasks..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-gray-200 px-4 py-2 rounded-md w-64 focus:outline-none text-black"
+            className="bg-gray-800 px-4 py-2 rounded-md w-64 focus:outline-none text-white"
           />
           <button
             onClick={handleReset}
-            className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-md focus:outline-none"
+            className="bg-gray-800 hover:bg-gray-500 text-white px-4 py-2 rounded-md focus:outline-none"
           >
             Reset to Default
           </button>

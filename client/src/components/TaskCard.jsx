@@ -14,7 +14,7 @@ function TaskCard({ task }) {
   };
 
   return (
-    <div className="bg-gray-800 max-w-md w-full p-4 md:p-6 rounded-lg shadow-md flex flex-col overflow-hidden">
+    <div className="bg-gray-900 max-w-md w-full p-4 md:p-6 rounded-lg shadow-md flex flex-col overflow-hidden">
       <header className="flex justify-between mb-4">
         <h1 className="text-lg md:text-xl font-bold text-white">{task.title}</h1>
       </header>
@@ -31,8 +31,8 @@ function TaskCard({ task }) {
         </button>
         <Link
           to={`/tasks/${task._id}`}
-          className="bg-slate-500
-           hover:bg-slate-600 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base mr-2"
+          className="bg-gray-800
+           hover:bg-gray-700 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base mr-2"
         >
           Detailed View
         </Link>

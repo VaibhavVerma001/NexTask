@@ -18,7 +18,7 @@ function RegisterPage() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="bg-gray-800 max-w-md p-10 rounded-md">
+      <div className="bg-gray-900 max-w-md p-10 rounded-md">
         {registerErrors.map((error, i) => (
           <div key={i} className="bg-red-500 p-2 text-white my-2 rounded-md">
             {error}
@@ -32,7 +32,7 @@ function RegisterPage() {
             name="username"
             placeholder="Username"
             {...register('username', { required: true })}
-            className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-600"
+            className="w-full bg-gray-800 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-700"
           />
           {errors.username && (
             <p className="text-red-500">Username is required</p>
@@ -43,7 +43,7 @@ function RegisterPage() {
             name="email"
             placeholder="Email"
             {...register('email', { required: true })}
-            className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-600"
+            className="w-full bg-gray-800 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-700"
           />
           {errors.email && (
             <p className="text-red-500">Email is required</p>
@@ -54,7 +54,7 @@ function RegisterPage() {
             name="password"
             placeholder="Password"
             {...register('password', { required: true })}
-            className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-600"
+            className="w-full bg-gray-800 text-white px-4 py-2 rounded-md my-2 focus:outline-none focus:bg-gray-700"
           />
           {errors.password && (
             <p className="text-red-500">Password is required</p>
@@ -81,4 +81,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default RegisterPage;

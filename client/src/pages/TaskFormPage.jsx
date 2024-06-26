@@ -43,7 +43,7 @@ function TaskFormPage() {
 
   return (
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
-      <div className="bg-zinc-800 max-w-md w-full p-10 rounded-md">
+      <div className="bg-gray-900 max-w-md w-full p-10 rounded-md">
         <form onSubmit={onSubmit}>
           <div className="mb-4">
             <label htmlFor="title" className="block text-sm font-medium text-white">Title</label>
@@ -52,7 +52,7 @@ function TaskFormPage() {
               placeholder="Title"
               {...register('title', { required: true })}
               autoFocus
-              className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
+              className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2"
             />
             {errors.title && <span className="text-red-500 block ">Title is required</span>}
           </div>
@@ -63,7 +63,7 @@ function TaskFormPage() {
               rows="3"
               placeholder="Description"
               {...register('description', { required: true })}
-              className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
+              className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2"
             ></textarea>
             {errors.description && <span className="text-red-500 block ">Description is required</span>}
           </div>
@@ -73,7 +73,7 @@ function TaskFormPage() {
             <input
               type="date"
               {...register('date', { required: true })}
-              className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
+              className="w-full bg-gray-700 text-white px-4 py-2 rounded-md my-2"
             />
             {errors.date && <span className="text-red-500 block ">Date is required</span>}
           </div>
