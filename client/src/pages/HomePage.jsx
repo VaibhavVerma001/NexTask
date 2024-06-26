@@ -1,21 +1,16 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 
 function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Task Manager</h1>
-        <nav>
-          <a href="/login" className="ml-4">Login</a>
-        </nav>
-      </header>
+
 
       {/* Hero Section */}
       <section className="flex-grow bg-blue-50 flex flex-col items-center justify-center text-center p-8">
         <h2 className="text-4xl text-blue-500 font-bold mb-4">Welcome to Task Manager</h2>
         <p className="text-lg text-blue-500 mb-6">Organize your tasks efficiently and boost your productivity.</p>
-        <a href="/register" className="bg-blue-600 text-white py-2 px-4 rounded-full">Get Started</a>
+        <Link to="/register" className="bg-blue-600 text-white py-2 px-4 rounded-full">Get Started</Link>
       </section>
 
       {/* Features Section */}

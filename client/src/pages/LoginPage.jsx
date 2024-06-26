@@ -62,7 +62,7 @@ function LoginPage() {
           <span className="text-white">
             Don't have an account?{' '}
             <Link to="/register" className="text-blue-500">
-              Sign up
+              Register
             </Link>
           </span>
         </p>
