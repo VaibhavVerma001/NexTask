@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js",
+    "server": "nodemon src/index.js",
+    "client":"npm start --prefix ./client",
+    "dev": "concurrently \"npm start\" \"npm run client\""
+    
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,7 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
