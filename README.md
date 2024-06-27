@@ -12,6 +12,11 @@ Use npm or yarn to install both backend and frontend dependencies.
 Run Concurrently:
 Start backend and frontend servers together with npm run dev.
 
+Create a .env File:
+Create a .env file having:
+DB_CONNECTION_STRING = [Your Connection String]
+JWT_SECRET = [Your JWT Secret Code]
+
 
 
 ## Backend 
