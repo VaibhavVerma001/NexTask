@@ -1,35 +1,16 @@
 Develop a task management application (NEXTask) with a user system, CRUD operations, and a MongoDB database.
 
 
-### Installation and Execution of the Backend (Node.js and Express) 
+## Concurrent Backend and Frontend Setup
 
-Follow these steps to clone and run the backend locally:
+Clone and Navigate:
+Clone your repository and navigate to the project directory.
 
-1. Open the terminal in the desired location to clone the repository.
+Install Dependencies:
+Use npm or yarn to install both backend and frontend dependencies.
 
-2. Clone this repository to your local machine using Git
-
-3. Navigate to the cloned project directory
-
-4. Install the backend dependencies using npm or yarn
-
-5. Start the backend server using npm
-
-7. Once the backend server is running, you can proceed with the installation and execution of the frontend.
-
-### Installation and Execution of the Frontend (React)
-
-Follow these steps to run the frontend locally:
-
-1. Open another terminal in the location of the cloned project.
-
-2. Navigate to the frontend directory
-
-3. Install the frontend dependencies using npm or yarn
-
-4. Start the frontend development server using npm
-
-5. Once the frontend development server is running, open your web browser and navigate to the local address to see the project in action.
+Run Concurrently:
+Start backend and frontend servers together with npm run dev.
 
 
 
