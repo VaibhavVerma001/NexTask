@@ -1,160 +1,101 @@
-<h1 align='center'>🌟 TaskManager 🔐🔄📊🌟</h1>
+Develop a task management application (NEXTask) with a user system, CRUD operations, and a MongoDB database.
 
-> Práctica de HTML, CSS, JavaScript, React, Node.js, Express, MongoDB y Tailwind. ✨
 
-🎯 Objetivo: Desarrollar una aplicación de gestión de tareas con sistema de usuarios, CRUD y base de datos en MongoDB.
+### Installation and Execution of the Backend (Node.js and Express) 
 
-Esta idea de proyecto está inspirada en el video "[Nodejs React Mongodb Login y CRUD (Aplicación FullStack)](https://youtu.be/NmkY4JgS21A?si=qWD6Td1IJp2UYNN6)" de [Fazt Code](https://www.youtube.com/@blackcode2).
+Follow these steps to clone and run the backend locally:
 
-Utilicé este video como tutorial para aprender a crear un sistema de usuarios, realizar operaciones CRUD y configurar una base de datos con MongoDB. Además, utilicé los comentarios para registrar y explicar lo que iba aprendiendo, lo que me permitió interiorizar los conocimientos de manera más efectiva.
+1. Open the terminal in the desired location to clone the repository.
 
-### Instalación y ejecución del back end del proyecto (Node.js y Express) 🛠️💻
+2. Clone this repository to your local machine using Git
 
-Sigue estos pasos para clonar y ejecutar el back end del proyecto localmente:
+3. Navigate to the cloned project directory
 
-1. Abre la consola en la ubicación deseada para clonar el repositorio.
+4. Install the backend dependencies using npm or yarn
 
-2. Clona este repositorio en tu máquina local utilizando Git:
+5. Start the backend server using npm
 
-    ```bash
-    git clone https://github.com/Schugu/mern-crud-auth.git
-    ```
+7. Once the backend server is running, you can proceed with the installation and execution of the frontend.
 
-3. Navega al directorio del proyecto clonado:
+### Installation and Execution of the Frontend (React)
 
-    ```bash
-    cd mern-crud-auth
-    ```
+Follow these steps to run the frontend locally:
 
-4. Instala las dependencias del back end utilizando npm o yarn:
+1. Open another terminal in the location of the cloned project.
 
-    ```bash
-    npm install
-    # o
-    yarn
-    ```
+2. Navigate to the frontend directory
 
-5. Inicia el servidor del back end utilizando npm:
+3. Install the frontend dependencies using npm or yarn
 
-    ```bash
-    npm run dev // Esta configurado para que sea así en el package.json 
-    ```
+4. Start the frontend development server using npm
 
-7. Una vez que el servidor del back end esté en funcionamiento, puedes proceder con la instalación y ejecución del front end.
-
-### Instalación y ejecución del front end del proyecto (React) 🛠️💻
-
-Sigue estos pasos para ejecutar el front end del proyecto localmente:
-
-1. Abre otra consola o terminal en la ubicación del proyecto clonado.
-
-2. Navega al directorio del front end:
-
-    ```bash
-    cd client
-    ```
-
-3. Instala las dependencias del front end utilizando npm o yarn:
-
-    ```bash
-    npm install
-    # o
-    yarn
-    ```
-
-4. Inicia el servidor de desarrollo del front end utilizando npm:
-
-    ```bash
-    npm run dev
-    ```
-
-5. Una vez que el servidor de desarrollo del front end esté en funcionamiento, abre tu navegador web y navega a la dirección local para ver el proyecto en acción.
-
-### Personalización y comprensión del proyecto 🎨🧠
-
-Para personalizar y comprender el proyecto, sigue estas instrucciones:
-
-- **Back end**: Si deseas modificar o entender cómo funciona el back end, te recomiendo revisar los archivos. La lógica de la aplicación se encuentra principalmente en estos archivos.
-
-- **Front end**: Si deseas modificar o entender cómo funciona el front end, te recomiendo revisar los archivos y carpetas dentro de `src`. La lógica de la aplicación se encuentra principalmente en los archivos `App.jsx` y `Main.jsx`, mientras que los componentes individuales se encuentran en la carpeta `src/components`.
+5. Once the frontend development server is running, open your web browser and navigate to the local address to see the project in action.
 
 
 
-# Mis anotaciones
 ## Backend 
-### Estructura de Carpetas y Archivos del Backend
+### Backend Folder and File Structure
 
-**Carpetas:**
+**Folders:**
 
-- **Src/Routes**: Definición de endpoints o rutas que el Frontend puede solicitar.
-- **Src/Controllers**: Funciones que se ejecutan al visitar una URL.
-- **Src/Models**: Modelos de datos de la base de datos, donde se crean esquemas.
-- **Src/Middlewares**: Funciones para proteger rutas, especialmente para usuarios autenticados.
-- **Src/Schemas**: Esquemas para validar datos.
-- **Src/Libs**: Código reutilizable que se puede importar varias veces.
+- **Src/Routes**: Definition of endpoints or routes that the Frontend can request.
+- **Src/Controllers**: Functions that execute when visiting a URL.
+- **Src/Models**: Database models, where schemas are created.
+- **Src/Middlewares**: Functions to protect routes, especially for authenticated users.
+- **Src/Schemas**: Schemas for data validation.
+- **Src/Libs**: Reusable code that can be imported multiple times.
 
-**Archivos:**
+**Files:**
 
-- **App.js**: Configuración de Express del Backend.
-- **Db.js**: Configuración de la base de datos.
-- **Config.js**: Archivo para crear configuraciones que otros archivos puedan importar.
-- **Index.js**: Punto de entrada de la aplicación.
-- **./Models/User.model.js**: Especificación de los datos que se guardarán en MongoDB.
-- **./Routes/Auth.routes.js**: Rutas relacionadas con la autenticación.
-- **./Controllers/Auth.controller.js**: Funciones relacionadas con la autenticación.
-- **./Libs/Jwt.js**: Genera un JSON Web Token.
-- **./Middlewares/ValidateToken.js**: Función para validar si el usuario está autenticado.
-- **./Controllers/Tasks.controllers.js**: Funciones para manejar las tareas.
-- **./Models/Task.model.js**: Modelo para las tareas.
-- **./Schemas/Auth.schemas.js**: Esquema para la autenticación.
-- **./Middlewares/ValidatorMiddleware.js**: Middleware para validar con los esquemas.
-- **./Schemas/Task.schema.js**: Esquema para las tareas.
+- **App.js**: Backend Express configuration.
+- **Db.js**: Database configuration.
+- **Config.js**: Configuration file for importing settings into other files.
+- **Index.js**: Application entry point.
+- **./Models/User.model.js**: Specification of the data to be saved in MongoDB.
+- **./Routes/Auth.routes.js**: Routes related to authentication.
+- **./Controllers/Auth.controller.js**: Functions related to authentication.
+- **./Libs/Jwt.js**: Generates a JSON Web Token.
+- **./Middlewares/ValidateToken.js**: Function to validate if the user is authenticated.
+- **./Controllers/Tasks.controllers.js**: Functions to handle tasks.
+- **./Models/Task.model.js**: Model for tasks.
+- **./Schemas/Auth.schemas.js**: Schema for authentication.
+- **./Middlewares/ValidatorMiddleware.js**: Middleware to validate with schemas.
+- **./Schemas/Task.schema.js**: Schema for tasks.
 
-### Anotaciones Importantes
+### Important Notes
 
-1. Al importar archivos que creamos, debemos incluir la extensión (.js).
-2. Para evitar mezclar las rutas del Frontend y del Backend, se debe agregar '/api' a las rutas del Backend en App.js.
-3. Los middlewares son funciones que se ejecutan antes de llegar a una ruta.
+1. When importing files that we create, we must include the extension (.js).
+2. To avoid mixing Frontend and Backend routes, add '/api' to the Backend routes in App.js.
+3. Middlewares are functions that run before reaching a route.
 
-### Módulos Utilizados
+### Modules Used
 
-- **Nodemon**: Para automatizar la reinicialización del servidor durante el desarrollo.
-- **Morgan**: Para registrar las peticiones que llegan al Backend en la consola.
-- **Mongoose**: Para conectarse y modelar los datos en MongoDB.
-- **Dotenv**: Para importar variables de entorno de un archivo .env.
-- **Bcryptjs**: Para encriptar contraseñas.
-- **JsonWebToken**: Para crear tokens de sesión.
-- **Cookie-parser**: Para convertir cookies en objetos JSON.
-- **Zod**: Para validar datos comparándolos con un esquema.
-- **Cors**: Para configurar CORS fácilmente.
-
+- **Nodemon**: Automates server restarts during development.
+- **Morgan**: Logs incoming requests to the backend in the console.
+- **Mongoose**: Connects and models data in MongoDB.
+- **Dotenv**: Imports environment variables from a .env file.
+- **Bcryptjs**: Encrypts passwords.
+- **JsonWebToken**: Creates session tokens.
+- **Cookie-parser**: Converts cookies to JSON objects.
+- **Zod**: Validates data against a schema.
+- **Cors**: Easily configures CORS.
 
 ## Frontend
-### Anotaciones Importantes
+### Important Notes
 
-1. Para evitar errores de CORS, se debe instalar un módulo en el Backend.
+1. To avoid CORS errors, install a module on the backend.
 
-### Módulos Utilizados
+### Modules Used
 
-- **React-router-dom**: Para crear y gestionar las rutas.
-- **React-hook-form**: Para validar datos de formularios y manejar cambios de estado.
-- **Axios**: Biblioteca para realizar peticiones HTTP.
-- **Js-cookie**: Para leer cookies.
-- **Dayjs**: Para manipular fechas en distintos formatos.
+- **React-router-dom**: Creates and manages routes.
+- **React-hook-form**: Validates form data and manages state changes.
+- **Axios**: Library for making HTTP requests.
+- **Js-cookie**: Reads cookies.
+- **Dayjs**: Manipulates dates in various formats.
 
-### Archivos
+### Files
 
-- **./Src/Api/auth.js**: Para realizar peticiones al Backend relacionadas con la autenticación.
-- **./Src/Context/AuthContext.jsx**: Contexto para almacenar datos de autenticación del usuario.
-- **./Src/Api/axios.js**: Archivo de configuración para Axios.
-- **./Src/Api/tasks.js**: Para realizar peticiones al Backend relacionadas con las tareas.
-
-### Capturas de pantalla 📸
-<img src='public/CapturaDePantalla1.png' alt='CapturaDePantalla1'>
-<img src='public/CapturaDePantalla2.png' alt='CapturaDePantalla2'>
-<img src='public/CapturaDePantalla3.png' alt='CapturaDePantalla3'>
-<img src='public/CapturaDePantalla4.png' alt='CapturaDePantalla4'>
-
-
-
-
+- **./Src/Api/auth.js**: Makes backend requests related to authentication.
+- **./Src/Context/AuthContext.jsx**: Context to store user authentication data.
+- **./Src/Api/axios.js**: Axios configuration file.
+- **./Src/Api/tasks.js**: Makes backend requests related to tasks.

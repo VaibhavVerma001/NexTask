@@ -1,7 +1,7 @@
-// Improtar el objeto z de zod.
+
 import { z } from 'zod';
 
-// Requisitos que deben tener los datos para que sean validos
+
 export const registerSchema = z.object({
   username: z
       .string({ required_error: 'Username is requiere' }),

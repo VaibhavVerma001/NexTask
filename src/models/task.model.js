@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// Datos que esperamos recibir de una task
+
 const taskSchema = new mongoose.Schema({
   title: {
     type: String,
