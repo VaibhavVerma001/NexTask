@@ -42,7 +42,7 @@ export function TaskProvider({ children }) {
     try {
       const res = await deleteTasksRequest(id);
       if (res.status === 204) {
-        // Crea un arreglo nuevo sin la tarea que acabamos de eliminar
+        
         setTasks(tasks.filter(task => task._id !== id));
       }
 

@@ -20,8 +20,8 @@ function TaskDetailPage() {
 
   const handleDelete = async () => {
     await deleteTask(id);
-    // Redirect to TasksPage after deletion
-    window.location.href = "/tasks"; // Redirect to TasksPage
+    
+    window.location.href = "/tasks";
   };
 
   if (!task) return <div>Loading...</div>;

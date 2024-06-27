@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 dayjs.extend(utc);
 
 function TaskFormPage() {
@@ -24,17 +26,22 @@ function TaskFormPage() {
     loadTask();
   }, [params.id, getTask, setValue]);
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     const dataValid = {
       ...data,
       date: data.date ? dayjs.utc(data.date).format() : dayjs.utc().format(),
     };
     if (params.id) {
-      updateTask(params.id, dataValid);
+      await updateTask(params.id, dataValid);
+      toast.success('Task successfully updated');
     } else {
-      createTask(dataValid);
+      await createTask(dataValid);
+      toast.success('Task successfully created');
     }
-    navigate('/tasks');
+    setTimeout(() => {
+      navigate('/tasks');
+      window.location.reload();
+    }, 1500);
   });
 
   const handleClose = () => {
@@ -69,7 +76,7 @@ function TaskFormPage() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="date" className="block text-sm font-medium text-white">Date</label>
+            <label htmlFor="date" className="block text-sm font-medium text-white">Due Date</label>
             <input
               type="date"
               {...register('date', { required: true })}
@@ -87,6 +94,7 @@ function TaskFormPage() {
             </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );

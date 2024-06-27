@@ -2,10 +2,18 @@ import { useTasks } from "../context/TasksContext";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 dayjs.extend(utc);
 
 function TaskCard({ task }) {
   const { deleteTask } = useTasks();
+
+  const handleDelete = async (taskId) => {
+    await deleteTask(taskId);
+    toast.success("Task deleted successfully");
+  };
+
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
       return text;
@@ -24,15 +32,14 @@ function TaskCard({ task }) {
       </p>
       <div className="flex justify-between mt-auto">
         <button
-          onClick={() => { deleteTask(task._id) }}
+          onClick={() => handleDelete(task._id)}
           className="bg-red-500 hover:bg-red-600 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base"
         >
           Delete
         </button>
         <Link
           to={`/tasks/${task._id}`}
-          className="bg-gray-800
-           hover:bg-gray-700 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base mr-2"
+          className="bg-gray-800 hover:bg-gray-700 text-white px-3 md:px-4 py-1 md:py-2 rounded-md text-sm md:text-base mr-2"
         >
           Detailed View
         </Link>
@@ -43,6 +50,7 @@ function TaskCard({ task }) {
           Edit
         </Link>
       </div>
+      <ToastContainer />
     </div>
   );
 }
